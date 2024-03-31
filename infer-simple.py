@@ -17,7 +17,6 @@ import requests
 import time
 
 # Construct the Roboflow Infer URL
-# (if running locally replace https://detect.roboflow.com/ with eg http://127.0.0.1:9001/)
 upload_url = "".join([
     "https://detect.roboflow.com/",
     ROBOFLOW_MODEL,
@@ -27,7 +26,7 @@ upload_url = "".join([
     "&stroke=5"
 ])
 
-# Get webcam interface via opencv-python
+# webcam interface via opencv-python
 video = cv2.VideoCapture(0)
 
 # Infer via the Roboflow Infer API and return the result
@@ -50,8 +49,14 @@ def infer():
     }, stream=True).raw
 
     # Parse result image
-    image = np.asarray(bytearray(resp.read()), dtype="uint8")
-    image = cv2.imdecode(image, cv2.IMREAD_COLOR)
+    # Read the binary data from the response object
+    image_bytes = bytearray(resp.read())
+    
+    # Convert the binary data to a NumPy array with the specified dtype
+    image_array = np.asarray(image_bytes, dtype="uint8")
+    
+    # Decode the NumPy array into an image using the cv2.IMREAD_COLOR flag
+    image = cv2.imdecode(image_array, cv2.IMREAD_COLOR)
 
     return image
 
