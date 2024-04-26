@@ -1,0 +1,14 @@
+{
+    "__comment1": "Obtain these values via Roboflow",
+    "ROBOFLOW_API_KEY": "QDbKOXh3RpVEGto84m05",
+    "ROBOFLOW_WORKSPACE_ID": "food",
+    "ROBOFLOW_PROJECT_ID": "food-detection-system",
+    "ROBOFLOW_MODEL": "proj-ex/1",
+    "ROBOFLOW_VERSION_NUMBER": "1",
+    "ROBOFLOW_SIZE": 640,
+    "EMAIL": "harshishavi02@gmail.com",
+
+    "__comment2": "The following are only needed for infer-async.py",
+    "FRAMERATE": 24,
+    "BUFFER": 0.1
+}
