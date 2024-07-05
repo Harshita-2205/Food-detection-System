@@ -1,8 +1,3 @@
-# Python Webcam Inference Examples
-These scripts demonstrate how to use the Roboflow Infer API to get predictions
-from a live webcam feed.
-
-![python-webcam](https://user-images.githubusercontent.com/870796/112769782-7d29ad00-8fe8-11eb-8233-2e1b81781dd6.gif)
 
 ## Installation
 Install the requirements with pip3 ([`infer-async.py`](infer-async.py) requires
